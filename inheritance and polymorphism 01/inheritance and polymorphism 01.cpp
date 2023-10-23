@@ -10,12 +10,8 @@ public:
 
     Figure() : sides_count(0), name("Фигура") {}
        
-    int get_sides_count() {
-      return sides_count;
-    }    
-    std::string get_name() {
-        return name;
-    }
+    int get_sides_count() {return sides_count;}    
+    std::string get_name() {return name;}
  };
 class Triangle:public Figure {
 public:
