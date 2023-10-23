@@ -46,6 +46,6 @@ int main()
     std::cout << triangle.get_name() << " имеет " << triangle.get_sides_count() << " стороны" << std::endl;
     std::cout << quadrangle.get_name() << " имеет " << quadrangle.get_sides_count() << " стороны" << std::endl;
   
-      return 0;
+     return 0;
 }
 
