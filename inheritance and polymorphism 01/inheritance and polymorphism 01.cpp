@@ -2,27 +2,34 @@
 #include <Windows.h> 
 
 class Figure{   
-private:    
-   int sides_count;
-
 protected:
-    Figure(int sides) : sides_count(sides) {}
+    int sides_count;
+    std::string name;  
 
 public:
-    Figure() : Figure(0) {}
-    
+
+    Figure() : sides_count(0), name("Фигура") {}
+       
     int get_sides_count() {
       return sides_count;
+    }    
+    std::string get_name() {
+        return name;
     }
  };
 class Triangle:public Figure {
 public:
-      Triangle() : Figure(3) {}
-
+    Triangle() {
+        sides_count = 3;
+        name = "Треугольник";
+    }
 };
 class Quadrangle:public Figure{
 public:
-      Quadrangle() : Figure(4) {}
+    Quadrangle() {
+        sides_count = 4;
+        name = "Четырёхугольник";
+    }
 };
 
 int main()
@@ -34,11 +41,11 @@ int main()
     Triangle triangle;
     Quadrangle quadrangle;
 
-    std::cout << "Количество сторон:\n";
-    std::cout << "Фигура: " << figure.get_sides_count() << "\n";
-    std::cout << "Треугольник: " << triangle.get_sides_count() << "\n";
-    std::cout << "Четырёхугольник: " << quadrangle.get_sides_count() << "\n";
-   
+    std::cout << "Количество сторон: " << std::endl;
+    std::cout << figure.get_name() << " имеет " << figure.get_sides_count() << " сторон" << std::endl;
+    std::cout << triangle.get_name() << " имеет " << triangle.get_sides_count() << " стороны" << std::endl;
+    std::cout << quadrangle.get_name() << " имеет " << quadrangle.get_sides_count() << " стороны" << std::endl;
+  
       return 0;
 }
 
